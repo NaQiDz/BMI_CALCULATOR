@@ -27,9 +27,14 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
 dependencies:
   flutter:
     sdk: flutter
+
+  fl_chart: ^0.55.1
+
+  font_awesome_flutter: ^9.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -63,6 +68,7 @@ flutter:
   - sources/logo.png
   - sources/img1.png
   - sources/img2.png
+  - sources/img3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -75,7 +81,8 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  #
+  #fonts:
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

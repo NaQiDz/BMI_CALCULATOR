@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'started.dart';
 import 'login.dart';
+import 'register.dart';
 
 void main() {
   runApp(ChoosePage());
@@ -47,7 +48,7 @@ class ChoosePage extends StatelessWidget {
                 ),
                 SizedBox(height: 40),
                 Text(
-                  '\nAlready has an account?\nSign up now!',
+                  "\nDoesn't has an account?\nSign up now!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -59,7 +60,7 @@ class ChoosePage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => StartedPage()),
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

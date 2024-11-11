@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'choose.dart';
-import 'homepage.dart';
+import 'login.dart';
 
 void main() {
-  runApp(LoginPage());
+  runApp(RegisterPage());
 }
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginStylePage(),
+      home: RegisterStylePage(),
       debugShowCheckedModeBanner: false, // Hide debug banner
     );
   }
 }
 
-class LoginStylePage extends StatelessWidget {
+class RegisterStylePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,16 +50,25 @@ class LoginStylePage extends StatelessWidget {
                     },
                   ),
                 ),
-                SizedBox(height: 80), // Adjust for spacing to image
+                SizedBox(height: 0), // Adjust for spacing to image
                 Image.asset(
-                  'sources/img2.png',
-                  height: 400,
-                  width: 400,
+                  'sources/img3.png',
+                  height: 200,
+                  width: 200,
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 5),
+                const Text(
+                  'Register Now!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                  ),
+                ),
+                SizedBox(height: 30),
                 TextField(
                   decoration: InputDecoration(
-                    labelText: 'Username',
+                    labelText: 'Enter your username',
                     labelStyle: TextStyle(color: Colors.white),
                     filled: true,
                     fillColor: Colors.grey.withOpacity(0.4),
@@ -71,9 +80,8 @@ class LoginStylePage extends StatelessWidget {
                 ),
                 SizedBox(height: 25),
                 TextField(
-                  obscureText: true,
                   decoration: InputDecoration(
-                    labelText: 'Password',
+                    labelText: 'Enter your age',
                     labelStyle: TextStyle(color: Colors.white),
                     filled: true,
                     fillColor: Colors.grey.withOpacity(0.4),
@@ -83,14 +91,49 @@ class LoginStylePage extends StatelessWidget {
                   ),
                   style: TextStyle(color: Colors.white),
                 ),
-                SizedBox(height: 60),
+                SizedBox(height: 25),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your gender',
+                    labelStyle: TextStyle(color: Colors.white),
+                    filled: true,
+                    fillColor: Colors.grey.withOpacity(0.4),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(height: 25),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your password',
+                    labelStyle: TextStyle(color: Colors.white),
+                    filled: true,
+                    fillColor: Colors.grey.withOpacity(0.4),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(height: 25),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Re-enter your password',
+                    labelStyle: TextStyle(color: Colors.white),
+                    filled: true,
+                    fillColor: Colors.grey.withOpacity(0.4),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(height: 50),
                 ElevatedButton(
                   onPressed: () {
                     // Handle login button press
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
-                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue.shade700,
@@ -100,25 +143,28 @@ class LoginStylePage extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'Login',
+                    'Sign Up',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 10),
                 TextButton(
                   onPressed: () {
-                    // Handle forget password press
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
                   },
                   child: RichText(
                     text: TextSpan(
-                      text: 'Forgot Password? Click ',
+                      text: "Already has an account, ",
                       style: TextStyle(color: Colors.white),
                       children: [
                         TextSpan(
-                          text: 'Here!',
+                          text: 'Login Now!',
                           style: TextStyle(color: Colors.blue.shade500),
                         ),
                       ],
