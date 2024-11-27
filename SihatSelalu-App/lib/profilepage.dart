@@ -1,31 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'qrpage.dart';
 
 void main() {
-  runApp(Qrpage());
+  runApp(ProfilePage());
 }
 
-class Qrpage extends StatelessWidget {
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: QRScannerPage(),
+      home: ProfileSavePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class ChartData {
-  final String x;
-  final double y;
-  final Color color;
-
-  ChartData(this.x, this.y, this.color);
-}
-
-class QRScannerPage extends StatelessWidget {
+class ProfileSavePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -49,6 +40,8 @@ class QRScannerPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildHeader(screenWidth),
+                SizedBox(height: 50),
+                buildProfileSection(),
               ],
             ),
           ),
@@ -90,6 +83,71 @@ class QRScannerPage extends StatelessWidget {
     );
   }
 
+  Widget buildProfileSection() {
+    return Column(
+      children: [
+        Text(
+          'PROFILE',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 20),
+        CircleAvatar(
+          radius: 50,
+          backgroundColor: Colors.white,
+          child: Icon(Icons.image, size: 50, color: Colors.grey),
+        ),
+        SizedBox(height: 20),
+        Text(
+          'YOUR NAME',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 20),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: buildProfileForm(),
+        ),
+      ],
+    );
+  }
+
+  Widget buildProfileForm() {
+    return Column(
+      children: [
+        ProfileTextField(label: 'Age:'),
+        ProfileTextField(label: 'Gender:'),
+        ProfileTextField(label: 'Height:'),
+        ProfileTextField(label: 'Weight:'),
+        SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue[600],
+            padding: EdgeInsets.symmetric(vertical: 15),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          child: Center(
+            child: Text(
+              'Save Information',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
   Widget _buildBottomNavigation(BuildContext context) {
     return Container(
@@ -108,7 +166,7 @@ class QRScannerPage extends StatelessWidget {
             context,
             label: 'Calculate BMI',
             icon: FontAwesomeIcons.calculator,
-            destination: Qrpage(),
+            destination: QRScannerPage(),
           ),
           Container(
             decoration: BoxDecoration(
@@ -121,7 +179,7 @@ class QRScannerPage extends StatelessWidget {
                 color: Colors.black,
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Qrpage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => QRScannerPage()));
               },
             ),
           ),
@@ -129,7 +187,7 @@ class QRScannerPage extends StatelessWidget {
             context,
             label: 'Track Calorie',
             icon: FontAwesomeIcons.search,
-            destination: Qrpage(),
+            destination: QRScannerPage(),
           ),
         ],
       ),
@@ -149,6 +207,39 @@ class QRScannerPage extends StatelessWidget {
           Text(
             label,
             style: TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProfileTextField extends StatelessWidget {
+  final String label;
+
+  ProfileTextField({required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 5),
+          TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.grey[300],
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide.none,
+              ),
+            ),
           ),
         ],
       ),

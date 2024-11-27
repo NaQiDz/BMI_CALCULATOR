@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LabTest</string>
+    <string name="username">Your Username</string>
+    <string name="password">Enter your password</string>
+</resources>

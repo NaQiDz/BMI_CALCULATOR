@@ -34,6 +34,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Get screen height using MediaQuery
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -52,15 +56,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   Image.asset(
                     'sources/logo.png', // Ensure this matches the path in pubspec.yaml
-                    height: 100,
-                    width: 100,
+                    height: screenHeight * 0.2, // 20% of screen height
+                    width: screenWidth * 0.3,  // 30% of screen width
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02), // 2% of screen height
                   Text(
                     'SihatSelalu App',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: screenHeight * 0.03, // 3% of screen height
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -69,7 +73,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Spacer(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 50.0),
+              padding: EdgeInsets.only(bottom: screenHeight * 0.05), // 5% of screen height
               child: CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               ),
