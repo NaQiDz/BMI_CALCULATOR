@@ -5,8 +5,9 @@ import 'package:workshop_2/started.dart';
 import 'package:http/http.dart' as http;
 import 'choose.dart';
 import 'login.dart';
+import 'homepage.dart';
 
-void main() {zul
+void main() {
   runApp(RegisterPage());
 }
 
