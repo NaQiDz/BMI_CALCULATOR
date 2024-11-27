@@ -53,10 +53,10 @@ packages:
     dependency: transitive
     description:
       name: equatable
-      sha256: b35578f687b79243d39008c44d638474d93e9091e578c970efef41ce0c3fa000
+      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.6"
+    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -241,18 +241,18 @@ packages:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_charts
-      sha256: f14547b70ad0a662d1f65e8fb79b7178b0dea439d3fc9cb13da8aa4714fecb96
+      sha256: "1cd2b58b8f2cebbc3f87c470be37cb906d4e3fe4cd16855626071f56ef24fd8f"
       url: "https://pub.dev"
     source: hosted
-    version: "27.2.2"
+    version: "27.2.4"
   syncfusion_flutter_core:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
-      sha256: "225b1cc135549bb4eef096d63b7323c30ee61c4b095c7e8a14bf9333e243d84b"
+      sha256: "795530addc930b3b06f4f2fe99a039de276860af505fcf54c4516fbcb838a3cb"
       url: "https://pub.dev"
     source: hosted
-    version: "27.2.2"
+    version: "27.2.4"
   term_glyph:
     dependency: transitive
     description:
