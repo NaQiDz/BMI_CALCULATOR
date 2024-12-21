@@ -7,10 +7,6 @@ import 'choose.dart';
 import 'login.dart';
 import 'homepage.dart';
 
-void main() {
-  runApp(RegisterPage());
-}
-
 class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +49,7 @@ class RegisterStylePage extends StatelessWidget {
         }
         else {
           try {
-            String uri = "http://10.0.2.2/SihatSelaluAppDatabase/register.php";
+            String uri = "http://172.20.10.3/SihatSelaluAppDatabase/register.php";
             var res = await http.post(
               Uri.parse(uri),
               headers: {"Content-Type": "application/json"},
@@ -132,7 +128,7 @@ class RegisterStylePage extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.02), // 2% spacing
                 Image.asset(
-                  'sources/img3.png',
+                  'sources/img4.png',
                   height: screenHeight * 0.2, // 20% of screen height
                   width: screenWidth * 0.4,   // 40% of screen width
                 ),
